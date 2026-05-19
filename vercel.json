@@ -1,0 +1,14 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/lslwebsite/(.*)",
+      "destination": "/lslwebsite/index.html"
+    },
+    {
+      "source": "/lslwebsite",
+      "destination": "/lslwebsite/index.html"
+    }
+  ]
+}
