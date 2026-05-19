@@ -1,14 +1,17 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "env": {
+    "VITE_PUBLIC_PATH": "/lslwebsite/"
+  },
   "rewrites": [
     {
-      "source": "/lslwebsite/(.*)",
-      "destination": "/lslwebsite/index.html"
+      "source": "/lslwebsite/:path*",
+      "destination": "/dist/:path*"
     },
     {
       "source": "/lslwebsite",
-      "destination": "/lslwebsite/index.html"
+      "destination": "/dist/index.html"
     }
   ]
 }
