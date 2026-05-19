@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+==========================================================================
+【AI HANDOVER NOTE】
+1. DESIGN PHILOSOPHY:
+   - Premium Corporate Minimalism: Libratum Solutions demands a sophisticated, trust-building aesthetic that reflects their position as a premium aviation consulting agency. The design philosophy centers on 'Precision. Performance. Partnership.' — translating into clean geometric layouts, generous whitespace, and purposeful use of the navy-gold color contrast.
+   - Visual Style: Neo-minimalism with subtle luxury cues. We employ a dark-dominant color scheme (deep navy backgrounds) with strategic metallic gold accents to create visual hierarchy and guide user attention to CTAs and key information. The design avoids ornamentation in favor of structural clarity and typographic excellence.
+   - Rationale: Aviation consulting requires projecting authority, reliability, and global sophistication. The dark navy (#21304A) establishes gravitas and professionalism, while the metallic gold gradient (#F4D069 to #B18D31) adds premium differentiation without compromising corporate credibility. This palette directly mirrors the brand's existing logo identity.
+
+2. TYPOGRAPHY:
+   - Sans Primary (Montserrat): Selected for its geometric precision and excellent readability at all sizes. Montserrat's clean, modern letterforms with slightly condensed proportions echo the all-caps 'LIBRATUM' wordmark style. Its professional yet approachable character suits both executive-level content and service descriptions. Weight range (400-700) provides sufficient hierarchy for headings, body text, and UI elements.
+   - Sans Secondary (IBM Plex Sans): Provides a technical counterpoint for data-heavy sections (route analytics, sustainability metrics). Its humanist geometry maintains warmth while supporting dense information architecture.
+   - Mono (JetBrains Mono): Reserved for technical specifications, tracking numbers, flight codes, and data tables. Its excellent legibility in small sizes makes it ideal for logistics/cargo information displays.
+
+3. COLOR SYSTEM:
+   - Brand Primary (Deep Navy #21304A → oklch(0.22 0.04 245)): Hue 245° chosen to capture the sophisticated blue-grey tone of aviation professionalism. This serves as the dominant background color, creating a premium 'dark-first' experience that differentiates from typical corporate websites.
+   - Brand Accent (Metallic Gold #D4A574 → oklch(0.75 0.08 65)): Hue 65° represents the warm gold tone from the logo. Mapped to --primary for CTAs and --accent for interactive elements. The moderate chroma (0.08) ensures the gold reads as elegant rather than garish.
+   - Semantic Mapping: --primary (gold) drives conversions and highlights services. --ring uses gold for focus states, reinforcing brand consistency. --destructive uses a muted red-orange to avoid clashing with the navy-gold palette. --success employs a sophisticated teal-green (hue 160°) that complements the navy base.
+   - Dark Mode Strategy: The design is inherently dark-first. Light mode (for accessibility) inverts to cream/off-white backgrounds with navy text, maintaining the gold accent system.
+
+4. USAGE GUIDE:
+   - Layout Type: Full-width hero sections with centered container content (max-width 1280px). Bento-style service cards with subtle borders and hover states. Asymmetric grid for founder bio and case studies.
+   - Recommended Effects: Subtle backdrop-blur on navigation overlay (backdrop-blur-md). Rim-light effect on service cards using gold border-t with reduced opacity. Gentle gradient overlays on hero sections (navy to slightly lighter navy) for depth.
+   - Gold Accent Rules: Use sparingly — CTAs, section dividers, icon accents, and hover states only. Avoid large gold backgrounds (maintain premium restraint). Gradient application: light gold (#F4D069) for highlights, darker gold (#B18D31) for shadows/borders.
+   - Typography Hierarchy: All-caps headings (letter-spacing: 0.05em) for section titles, mimicking logo style. Sentence case for body text. Generous line-height (1.7) for readability on dark backgrounds.
+   - Accessibility: Ensure all text meets WCAG AA standards against navy backgrounds. Use white (oklch(0.98)) for primary text, gold only for accents/headings. Provide sufficient contrast for interactive elements.
+==========================================================================
+*/
+
+:root {
+  /* Typography */
+  --font-sans: Montserrat, IBM Plex Sans, system-ui, -apple-system, sans-serif;
+  --font-mono: JetBrains Mono, Consolas, monospace;
+  
+  /* Radius */
+  --radius: 0.5rem;
+
+  /* Core UI Tokens */
+  --background: oklch(0.97 0.01 65);
+  --foreground: oklch(0.22 0.04 245);
+  --card: oklch(0.99 0.005 65);
+  --card-foreground: oklch(0.22 0.04 245);
+  --popover: oklch(0.99 0.005 65);
+  --popover-foreground: oklch(0.22 0.04 245);
+  --primary: oklch(0.75 0.08 65);
+  --primary-foreground: oklch(0.15 0.04 245);
+  --secondary: oklch(0.88 0.02 245);
+  --secondary-foreground: oklch(0.22 0.04 245);
+  --muted: oklch(0.92 0.01 245);
+  --muted-foreground: oklch(0.45 0.03 245);
+  --accent: oklch(0.75 0.08 65);
+  --accent-foreground: oklch(0.15 0.04 245);
+  --destructive: oklch(0.58 0.15 25);
+  --destructive-foreground: oklch(0.98 0.005 65);
+  --border: oklch(0.85 0.02 245);
+  --input: oklch(0.85 0.02 245);
+  --ring: oklch(0.75 0.08 65);
+  
+  /* Chart Tokens */
+  --chart-1: oklch(0.75 0.08 65);
+  --chart-2: oklch(0.22 0.04 245);
+  --chart-3: oklch(0.55 0.12 160);
+  --chart-4: oklch(0.65 0.10 200);
+  --chart-5: oklch(0.70 0.08 45);
+  
+  /* Sidebar Tokens */
+  --sidebar: oklch(0.99 0.005 65);
+  --sidebar-foreground: oklch(0.22 0.04 245);
+  --sidebar-primary: oklch(0.75 0.08 65);
+  --sidebar-primary-foreground: oklch(0.15 0.04 245);
+  --sidebar-accent: oklch(0.88 0.02 245);
+  --sidebar-accent-foreground: oklch(0.22 0.04 245);
+  --sidebar-border: oklch(0.85 0.02 245);
+  --sidebar-ring: oklch(0.75 0.08 65);
+}
+
+.dark {
+  --background: oklch(0.16 0.04 245);
+  --foreground: oklch(0.98 0.005 65);
+  --card: oklch(0.20 0.04 245);
+  --card-foreground: oklch(0.98 0.005 65);
+  --popover: oklch(0.18 0.04 245);
+  --popover-foreground: oklch(0.98 0.005 65);
+  --primary: oklch(0.75 0.10 65);
+  --primary-foreground: oklch(0.15 0.04 245);
+  --secondary: oklch(0.28 0.04 245);
+  --secondary-foreground: oklch(0.98 0.005 65);
+  --muted: oklch(0.25 0.03 245);
+  --muted-foreground: oklch(0.65 0.02 245);
+  --accent: oklch(0.75 0.10 65);
+  --accent-foreground: oklch(0.15 0.04 245);
+  --destructive: oklch(0.60 0.18 25);
+  --destructive-foreground: oklch(0.98 0.005 65);
+  --border: oklch(0.30 0.04 245);
+  --input: oklch(0.30 0.04 245);
+  --ring: oklch(0.75 0.10 65);
+  
+  /* Chart Tokens */
+  --chart-1: oklch(0.75 0.10 65);
+  --chart-2: oklch(0.55 0.08 245);
+  --chart-3: oklch(0.60 0.14 160);
+  --chart-4: oklch(0.65 0.12 200);
+  --chart-5: oklch(0.72 0.10 45);
+  
+  /* Sidebar Tokens */
+  --sidebar: oklch(0.14 0.04 245);
+  --sidebar-foreground: oklch(0.98 0.005 65);
+  --sidebar-primary: oklch(0.75 0.10 65);
+  --sidebar-primary-foreground: oklch(0.15 0.04 245);
+  --sidebar-accent: oklch(0.28 0.04 245);
+  --sidebar-accent-foreground: oklch(0.98 0.005 65);
+  --sidebar-border: oklch(0.30 0.04 245);
+  --sidebar-ring: oklch(0.75 0.10 65);
+}
+
+@theme inline {
+  /* Shadcn Core Mapping */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Charts Mapping */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar Mapping */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans min-h-screen;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    @apply font-mono;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40;
+  }
+}

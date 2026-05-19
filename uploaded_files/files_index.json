@@ -1,0 +1,25 @@
+{
+  "documents": [],
+  "tables_parsed": [],
+  "tables_source_info": [],
+  "images": [
+    {
+      "original_name": "193552155",
+      "file_name": "193552155.png",
+      "file_path": "/data/workspace/def0fad1-ab22-4677-978e-01537335d2c4/libratum_solutions/public/images/193552155.png",
+      "rel_path": "images/193552155.png",
+      "file_type": "png",
+      "category": "images"
+    }
+  ],
+  "summary": {
+    "total_files": 1,
+    "by_category": {
+      "documents": 0,
+      "tables_parsed": 0,
+      "tables_source_info": 0,
+      "images": 1
+    },
+    "processing_time": null
+  }
+}
