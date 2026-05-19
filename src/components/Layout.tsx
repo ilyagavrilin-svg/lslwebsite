@@ -149,8 +149,8 @@ export function Footer() {
           <div className="space-y-2 text-white/50 text-sm">
             <p>Hong Kong SAR</p>
             <p>Asia-Pacific & Global Markets</p>
-            <a href="mailto:info@libratum.com" className="flex items-center gap-1 hover:text-[#F4D069] transition-colors mt-3">
-              info@libratum.com <ExternalLink size={12} />
+            <a href="mailto:info@libratum.hk" className="flex items-center gap-1 hover:text-[#F4D069] transition-colors mt-3">
+              info@libratum.hk <ExternalLink size={12} />
             </a>
           </div>
         </div>
