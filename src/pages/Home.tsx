@@ -522,10 +522,10 @@ export default function Home() {
           <p className="text-white/30 text-sm">
             Or email directly:{" "}
             <a
-              href="mailto:info@libratum.com"
+              href="mailto:info@libratum.hk"
               className="text-[#F4D069]/70 hover:text-[#F4D069] transition-colors underline underline-offset-4"
             >
-              info@libratum.com
+              info@libratum.hk
             </a>
           </p>
         </div>
